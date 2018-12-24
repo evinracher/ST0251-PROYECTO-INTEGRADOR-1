@@ -1,0 +1,28 @@
+<h1>Schedule</h1>
+
+<div class="schedule-div">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <% Day.all.each do |day| %>
+          <th><%= day.name %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <% Hour.all.each do |hour| %>
+      <tr>
+        <th><%= hour.name %></th>
+        <% Day.all.each do |day|%>
+          <td><%= 'x' if @sessions.where(day_has_hour: DayHasHour.find_by(day: day, hour: hour)).any? %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Register Schedule', new_advisor_schedule_path(@advisor), method: :get, class: 'btn' %> | 
+<%= link_to 'Back', advisor_path(@advisor), class: 'btn'%>

@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Session has student:</strong>
+  <%= @survey.session_has_student.id%>
+</p>
+
+<p>
+  <strong>Satisfaction:</strong>
+  <%= @survey.satisfaction %>
+</p>
+
+<p>
+  <strong>Contribution:</strong>
+  <%= @survey.contribution %>
+</p>
+
+<p>
+  <strong>Conditions:</strong>
+  <%= @survey.conditions %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @survey.domain %>
+</p>
+
+<p>
+  <strong>Clarity:</strong>
+  <%= @survey.clarity %>
+</p>
+
+<p>
+  <strong>Ability:</strong>
+  <%= @survey.ability %>
+</p>
+
+<p>
+  <strong>Treat:</strong>
+  <%= @survey.treat %>
+</p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @survey.method %>
+</p>
+
+<p>
+  <strong>Fears:</strong>
+  <%= @survey.fears %>
+</p>
+
+<p>
+  <strong>Impact:</strong>
+  <%= @survey.impact %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @survey.comments %>
+</p>
+
+<% if current_user.kind == 0 or current_user.kind == 1 %>
+<%= link_to 'Back', surveys_path %>
+<% else %>
+<%= link_to 'Back', current_user.student %>
+<% end %>

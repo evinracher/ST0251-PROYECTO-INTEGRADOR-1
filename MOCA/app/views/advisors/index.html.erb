@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('advisors')%></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('u_c') %></th>
+      <th><%= t('semester') %></th>
+      <th><%= t('subjects') %></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advisors.each do |advisor| %>
+      <tr>
+        <td><%= advisor.student.university_code %></td>
+        <td><%= advisor.semester.name %></td>
+        <td>
+          <ul>
+            <% advisor.subjects.each do |subject| %>
+              <li><%= subject.name %></li>
+            <% end %>
+          </ul>
+        </td>
+        <td><%= link_to t('show'), advisor %></td>
+        <td><%= link_to t('edit'), edit_advisor_path(advisor) %></td>
+        <td><%= link_to t('destroy'), advisor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('validate'), advisors_validate_path(advisor) if advisor.is_valid.nil? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Ranking', ranking_advisor_path %> |
+<%= link_to t('n_advisor') , new_advisor_path %>

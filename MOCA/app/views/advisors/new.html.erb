@@ -1,0 +1,8 @@
+<h1>New Advisor</h1>
+
+<%= render 'form', advisor: @advisor %>
+<% if current_user.kind == 0 or current_user.kind == 1 %>
+<%= link_to 'Back', advisors_path %>
+<% else %>
+<%= link_to 'Back', current_user.student %>
+<% end %>

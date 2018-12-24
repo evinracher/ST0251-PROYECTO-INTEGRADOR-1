@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+.title {
+    color: white;
+}
+
+#pregrades_space {
+    border-style: solid;
+    padding: 25px 25px 25px 25px;
+    border-color: lightblue;
+    margin-bottom: 20px;
+    // auto-size to its content
+    display: inline-block;
+}
+
+
+.pregrade{
+    margin-bottom: 30px;
+}
+
+.label {
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 15%;
+}
+
+p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
